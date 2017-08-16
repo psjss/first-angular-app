@@ -19,7 +19,7 @@ export class RecipeService{
       ]),
     new Recipe('Ham Burger',
       'Mc Donalds',
-      'http://www.bk.com/sites/default/files/VeggieBurger_thumb.png',
+      'http://www.tellusaboutus.com/comments/images/BK-WebComment/BB_WHOPPER-v1.png',
       [
         new Ingredients('Buns',2),
         new Ingredients('Meat',1)
@@ -28,6 +28,11 @@ export class RecipeService{
 
   constructor(private slService: ShoppingListService){
 
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
   }
 
   getRecipes(){
